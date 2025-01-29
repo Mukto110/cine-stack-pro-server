@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { TMovie, TReview } from "./movies.interface";
+import { TMovie, TReview } from "./movie.interface";
 
 const reviewSchema = new Schema<TReview>({
   email: { type: String, required: true },
