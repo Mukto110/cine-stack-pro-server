@@ -1,9 +1,10 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import { MovieControllers } from "./movie.controller";
 
 const router = express.Router();
 
-router.post("/", (req: Request, res: Response) => {
-  res.send("Hi");
-});
+router.get("/", MovieControllers.getAllMovies);
+router.get("/:movieId");
+router.post("/", MovieControllers.createMovie);
 
 export const MovieRoutes = router;
