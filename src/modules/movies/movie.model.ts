@@ -15,6 +15,7 @@ const movieSchema = new Schema<TMovie>({
   isDeleted: { type: Boolean, default: false },
   viewCount: { type: Number, required: true, default: 0 },
   reviews: { type: [reviewSchema], default: [] },
+  slug: { type: String, required: true, unique: true },
 });
 
 export const Movie = model<TMovie>("Movie", movieSchema);

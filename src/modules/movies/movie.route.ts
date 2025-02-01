@@ -4,7 +4,7 @@ import { MovieControllers } from "./movie.controller";
 const router = express.Router();
 
 router.get("/", MovieControllers.getAllMovies);
-router.get("/:movieId", MovieControllers.getMovieById);
+router.get("/:slug", MovieControllers.getMovieBySlug);
 router.post("/", MovieControllers.createMovie);
 
 export const MovieRoutes = router;
