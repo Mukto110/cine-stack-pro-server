@@ -11,7 +11,12 @@ const getAllMovies = async () => {
   return result;
 };
 
+const getMovieById = async (id: string) => {
+  return await Movie.findById(id);
+};
+
 export const MovieServices = {
   createMovie,
   getAllMovies,
+  getMovieById,
 };

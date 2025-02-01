@@ -20,7 +20,22 @@ const getAllMovies = async (req: Request, res: Response) => {
   });
 };
 
+const getMovieById = async (req: Request, res: Response) => {
+  try {
+    const movieId = req.params.movieId;
+    const result = await MovieServices.getMovieById(movieId);
+    res.json({
+      success: true,
+      message: "Single movie found",
+      data: result,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const MovieControllers = {
   createMovie,
   getAllMovies,
+  getMovieById,
 };
